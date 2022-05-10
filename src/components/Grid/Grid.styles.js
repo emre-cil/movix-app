@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const Wrapper = styled.div`
   max-width: var(--maxWidth);
   margin: 0 auto;
+  margin-bottom: 1rem;
   padding: 0 20px;
   h1 {
     color: var(--medGrey);
