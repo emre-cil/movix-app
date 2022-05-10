@@ -13,3 +13,5 @@ yarn-error.log*
 /.changelog
 .npm/
 .env
+# Local Netlify folder
+.netlify
