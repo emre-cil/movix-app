@@ -25,6 +25,6 @@ export const Image = styled.img`
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
   @media screen and (max-width: 768px) {
-    height: 325px;
+    height: 350px;
   }
 `;

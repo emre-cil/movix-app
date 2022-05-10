@@ -5,7 +5,6 @@ export const Image = styled.img`
   height: 100%;
   max-width: 720px;
   border-radius: 1rem;
-
   border-top-right-radius: ${(props) =>
     props.clickable !== false ? "1rem" : "0"};
   border-bottom-right-radius: ${(props) =>
@@ -24,5 +23,10 @@ export const Image = styled.img`
   }
   :hover {
     opacity: 0.87;
+  }
+  @media screen and (max-width: 768px) {
+    border-top-right-radius: 1rem;
+    border-bottom-left-radius: ${(props) =>
+      props.clickable !== false ? "1rem" : "0"};
   }
 `;
