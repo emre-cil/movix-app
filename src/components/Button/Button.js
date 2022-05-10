@@ -1,4 +1,6 @@
 import React from "react";
+import PropTypes from "prop-types";
+
 import { Wrapper } from "./Button.styles";
 
 const Button = ({ text, onClickHandler }) => (
@@ -6,4 +8,9 @@ const Button = ({ text, onClickHandler }) => (
     {text}
   </Wrapper>
 );
+
+Button.propTypes = {
+  text: PropTypes.string,
+  callback: PropTypes.func,
+};
 export default Button;
