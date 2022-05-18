@@ -1,3 +1,9 @@
+Check this out =><a href="http://movix-app.netlify.app" target="_blank">MoviX Website Demo</a>
+<br/>
+<br/>
+
+# Images
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
