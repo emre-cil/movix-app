@@ -16,7 +16,6 @@ export const useMovieFetch = (movieId) => {
       }
       try {
         setLoading(true);
-        console.log("1kere");
         setError(false);
         const movie = await API.fetchMovie(movieId);
         const credits = await API.fetchCredits(movieId);

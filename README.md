@@ -2,6 +2,14 @@ Check this out =><a href="http://movix-app.netlify.app" target="_blank">MoviX We
 <br/>
 <br/>
 
+## Important
+
+Before the start create .env file in MoviX folder and add TMDB api key.
+
+```
+REACT_APP_API_KEY=
+```
+
 # Images
 
 # Getting Started with Create React App

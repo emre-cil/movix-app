@@ -21,3 +21,27 @@ export const Logo = styled.img`
     width: 100px;
   }
 `;
+
+export const LinkButton = styled.div`
+  color: var(--white);
+  cursor: pointer;
+
+  &:hover {
+    color: #ffd700;
+  }
+`;
+export const Links = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  @media screen and (max-width: 500px) {
+    flex-direction: column;
+  }
+
+  a {
+    text-decoration: none !important;
+  }
+  a + a {
+    margin-left: 1rem;
+  }
+`;
