@@ -27,7 +27,7 @@ export const LinkButton = styled.div`
   cursor: pointer;
 
   &:hover {
-    color: #ffd700;
+    color: var(--gold);
   }
 `;
 export const Links = styled.div`

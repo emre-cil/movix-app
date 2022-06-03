@@ -10,11 +10,11 @@ const Header = () => {
           <Logo src={LogoImg} alt="Movix" />
         </Link>
         <Links>
-          <Link to="/signin">
-            <LinkButton>Sign In</LinkButton>
+          <Link to="/login">
+            <LinkButton>Login</LinkButton>
           </Link>
-          <Link to="/signup">
-            <LinkButton>Sign Up</LinkButton>
+          <Link to="/register">
+            <LinkButton>Register</LinkButton>
           </Link>
         </Links>
       </Content>

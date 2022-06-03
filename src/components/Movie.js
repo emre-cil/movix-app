@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { IMAGE_BASE_URL, POSTER_SIZE } from "../config";
 import Grid from "./Grid/Grid";
 import Spinner from "./Spinner/Spinner";
-import NoImage from "../images/noImage.jpg";
+import NoImage from "../images/noImage.png";
 import BreadCrumb from "./BreadCrumb/BreadCrumb";
 import MovieInfo from "./MovieInfo/MovieInfo";
 import MovieInfoBar from "./MovieInfoBar/MovieInfoBar";
