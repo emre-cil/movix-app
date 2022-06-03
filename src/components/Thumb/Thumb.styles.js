@@ -10,7 +10,9 @@ export const Image = styled.img`
   border-bottom-right-radius: ${(props) =>
     props.clickable !== false ? "1rem" : "0"};
   object-fit: cover;
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  -webkit-box-shadow: 0px 0px 2px 2px rgba(255, 255, 255, 0.05);
+  -moz-box-shadow: 0px 0px 2px 2px rgba(255, 255, 255, 0.05);
+  box-shadow: 0px 0px 2px 2px rgba(255, 255, 255, 0.05);
   cursor: ${(props) => (props.clickable !== false ? "pointer" : "default")};
   animation: thumbAnimation 0.5s;
   @keyframes thumbAnimation {

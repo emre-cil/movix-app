@@ -4,7 +4,6 @@ import { IMAGE_BASE_URL, POSTER_SIZE } from "../config";
 import Grid from "./Grid/Grid";
 import Spinner from "./Spinner/Spinner";
 import NoImage from "../images/noImage.png";
-import BreadCrumb from "./BreadCrumb/BreadCrumb";
 import MovieInfo from "./MovieInfo/MovieInfo";
 import MovieInfoBar from "./MovieInfoBar/MovieInfoBar";
 import Actor from "./Actor/Actor";
@@ -18,7 +17,6 @@ const Movie = () => {
   if (error) return <div>Error...</div>;
   return (
     <>
-      <BreadCrumb movieTitle={movie.original_title} />
       <MovieInfo movie={movie} />
       <MovieInfoBar
         time={movie.runtime}

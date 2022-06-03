@@ -1,8 +1,9 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-  background: var(--darkGrey);
+  background: black;
   padding: 0 20px;
+  border-bottom: 1px solid var(--gold);
 `;
 
 export const Content = styled.div`

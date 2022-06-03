@@ -12,12 +12,15 @@ import {
 const Login = () => {
   const email = useRef("");
   const password = useRef("");
-
+  const onSubmitHandler = (e) => {
+    e.preventDefault();
+    console.table(email.current.value, password.current.value);
+  };
   return (
     <Wrapper>
       <Content>
         <Title>Login</Title>
-        <form action="submit">
+        <form action="submit" onSubmit={onSubmitHandler}>
           <InputWrapper>
             <Label htmlFor="email">Email</Label>
             <Input type="email" ref={email} required />

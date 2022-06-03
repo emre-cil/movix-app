@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
-import { useHomeFetch } from "../hooks/useHomeFetch";
-import { POSTER_SIZE, BACKDROP_SIZE, IMAGE_BASE_URL } from "../config";
-import NoImage from "../images/noImage.png";
+import { useHomeFetch } from "../../hooks/useHomeFetch";
+import { POSTER_SIZE, BACKDROP_SIZE, IMAGE_BASE_URL } from "../../config";
+import NoImage from "../../images/noImage.png";
 //components
-import HeroImage from "../components/HeroImage/HeroImage";
-import Grid from "../components/Grid/Grid";
-import Thumb from "../components/Thumb/Thumb";
-import Spinner from "../components/Spinner/Spinner";
-import SearchBar from "../components/SearchBar/SearchBar";
-import Button from "../components/Button/Button";
+import HeroImage from "../../components/HeroImage/HeroImage";
+import Grid from "../../components/Grid/Grid";
+import Thumb from "../../components/Thumb/Thumb";
+import Spinner from "../../components/Spinner/Spinner";
+import SearchBar from "../../components/SearchBar/SearchBar";
+import Button from "../../components/Button/Button";
 
 const Home = () => {
   const {
@@ -23,7 +23,7 @@ const Home = () => {
   if (error) return <div>Error...</div>;
 
   return (
-    <>
+    <div>
       {state.results[0] && !searchValue && (
         <HeroImage
           image={`${IMAGE_BASE_URL}${BACKDROP_SIZE}${state.results[0].backdrop_path}`}
@@ -57,7 +57,7 @@ const Home = () => {
           onClickHandler={() => setIsLoadingMore(true)}
         />
       )}
-    </>
+    </div>
   );
 };
 
