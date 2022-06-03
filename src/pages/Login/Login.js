@@ -1,7 +1,8 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useContext } from "react";
 import { ToastContainer, toast } from "react-toastify";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Spinner from "../../components/Spinner/Spinner";
+import AuthContext from "../../store/auth-context";
 import {
   Wrapper,
   Content,
@@ -13,6 +14,8 @@ import {
 } from "./Login.styles";
 
 const Login = () => {
+  let navigate = useNavigate();
+  const authCtx = useContext(AuthContext);
   const [loading, setloading] = useState(false);
   const email = useRef("");
   const password = useRef("");
@@ -28,7 +31,16 @@ const Login = () => {
       })
       .then((response) => {
         console.log(response);
+        if (response.data.data.jwToken) {
+          const expirationTime = new Date(new Date().getTime() + 60000 * 1000);
+          console.log(expirationTime.toISOString());
+          authCtx.login(
+            response.data.data.jwToken,
+            expirationTime.toISOString()
+          );
+        }
         setloading(false);
+        navigate("/", { replace: true });
       })
       .catch((error) => {
         toast.error(error.response.data.Message);

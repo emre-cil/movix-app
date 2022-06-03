@@ -25,6 +25,7 @@ export const Logo = styled.img`
 export const LinkButton = styled.div`
   color: var(--white);
   cursor: pointer;
+  margin-left: 1rem;
 
   &:hover {
     color: var(--gold);
@@ -40,8 +41,5 @@ export const Links = styled.div`
 
   a {
     text-decoration: none !important;
-  }
-  a + a {
-    margin-left: 1rem;
   }
 `;

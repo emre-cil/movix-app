@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import { Link } from "react-router-dom";
 import Spinner from "../../components/Spinner/Spinner";
-
+import { useNavigate } from "react-router-dom";
 import {
   Wrapper,
   Content,
@@ -13,6 +13,7 @@ import {
   Title,
 } from "../Login/Login.styles";
 const Register = () => {
+  let navigate = useNavigate();
   const [loading, setloading] = useState(false);
   const axios = require("axios").default;
   const firstName = useRef("");
@@ -69,15 +70,6 @@ const Register = () => {
     }
     setloading(true);
 
-    console.table(
-      firstName.current.value,
-      lastName.current.value,
-      email.current.value,
-      userName.current.value,
-      password.current.value,
-      confirmPassword.current.value
-    );
-
     axios
       .post("https://movixapi1.azurewebsites.net/api/Account/register", {
         firstName: firstName.current.value.trim(),
@@ -89,7 +81,10 @@ const Register = () => {
       })
       .then((response) => {
         console.log(response);
-        setloading(false);
+        if (response.status === 200) {
+          setloading(false);
+          navigate("/login", { replace: true });
+        }
       })
       .catch((error) => {
         console.log(error);
