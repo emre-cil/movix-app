@@ -13,7 +13,7 @@ export const Wrapper = styled.div`
     margin: 5px 0;
   }
   @media screen and (max-width: 768px) {
-    width: 80%;
+    width: 95%;
     margin: 0 auto;
   }
 `;
@@ -25,6 +25,9 @@ export const Image = styled.img`
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
   @media screen and (max-width: 768px) {
-    height: 350px;
+    height: 325px;
+  }
+  @media screen and (max-width: 455px) {
+    height: 450px;
   }
 `;

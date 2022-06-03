@@ -70,7 +70,7 @@ export const Button = styled.button`
 export const Input = styled.input`
   height: 2.5rem;
   border-radius: 0.5rem;
-  background-color: var(--lightGrey);
+  background-color: gray;
   color: var(--medGrey);
   font-size: 1.1rem;
   padding-left: 0.5rem;

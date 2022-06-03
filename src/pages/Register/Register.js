@@ -1,6 +1,8 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import { Link } from "react-router-dom";
+import Spinner from "../../components/Spinner/Spinner";
+
 import {
   Wrapper,
   Content,
@@ -11,6 +13,15 @@ import {
   Title,
 } from "../Login/Login.styles";
 const Register = () => {
+  const [loading, setloading] = useState(false);
+  const axios = require("axios").default;
+  const firstName = useRef("");
+  const lastName = useRef("");
+  const email = useRef("");
+  const userName = useRef("");
+  const password = useRef("");
+  const confirmPassword = useRef("");
+
   const error = (errorText) =>
     toast.error(errorText, {
       position: "top-center",
@@ -22,19 +33,41 @@ const Register = () => {
       progress: undefined,
     });
 
-  const axios = require("axios").default;
-  const firstName = useRef("");
-  const lastName = useRef("");
-  const email = useRef("");
-  const userName = useRef("");
-  const password = useRef("");
-  const confirmPassword = useRef("");
+  //check upper case
+  const checkUppercase = (str) => {
+    return /[A-Z]/.test(str);
+  };
+  //check special characters
+  const checkSpecialCharacters = (str) => {
+    return /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/.test(str);
+  };
   const onSubmitHandler = (e) => {
     e.preventDefault();
-    if (password.current.value !== confirmPassword.current.value) {
-      error("Passwords do not match");
+    if (password.current.value.length < 6) {
+      error("Password must be at least 6 characters");
       return;
     }
+    if (userName.current.value.length < 6) {
+      error("Username must be at least 6 characters");
+      return;
+    }
+    if (password.current.value !== confirmPassword.current.value) {
+      toast.error("Passwords do not match");
+      return;
+    }
+    if (!checkUppercase(userName.current.value)) {
+      toast.error("Username must contain at least one uppercase letter");
+      return;
+    }
+    if (!checkUppercase(password.current.value)) {
+      toast.error("Password must contain at least one uppercase letter");
+      return;
+    }
+    if (!checkSpecialCharacters(password.current.value)) {
+      toast.error("Password must contain at least one special character");
+      return;
+    }
+    setloading(true);
 
     console.table(
       firstName.current.value,
@@ -54,11 +87,14 @@ const Register = () => {
         password: password.current.value.trim(),
         confirmPassword: confirmPassword.current.value.trim(),
       })
-      .then(function (response) {
+      .then((response) => {
         console.log(response);
+        setloading(false);
       })
-      .catch(function (error) {
+      .catch((error) => {
         console.log(error);
+        toast.error(error.response.data.Message);
+        setloading(false);
       });
   };
   return (
@@ -93,11 +129,11 @@ const Register = () => {
               <Label htmlFor="password">Confirm Password</Label>
               <Input type="password" required ref={confirmPassword} />
             </InputWrapper>
-            <Button type="submit">Sign Up</Button>
+            {loading ? <Spinner /> : <Button type="submit">Sign Up</Button>}
           </form>
           <div className="formFooter">
             Already Have an Account?
-            <a href="/login">Sign In</a>
+            <Link to="/login">Sign In</Link>
           </div>
         </Content>
       </Wrapper>

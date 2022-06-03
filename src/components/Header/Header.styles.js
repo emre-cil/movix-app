@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-  background: black;
   padding: 0 20px;
   border-bottom: 1px solid var(--gold);
 `;
