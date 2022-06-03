@@ -80,14 +80,12 @@ const Register = () => {
         confirmPassword: confirmPassword.current.value.trim(),
       })
       .then((response) => {
-        console.log(response);
         if (response.status === 200) {
           setloading(false);
           navigate("/login", { replace: true });
         }
       })
       .catch((error) => {
-        console.log(error);
         toast.error(error.response.data.Message);
         setloading(false);
       });

@@ -5,7 +5,10 @@ import LogoImg from "../../images/Logo.png";
 import AuthContext from "../../store/auth-context";
 const Header = () => {
   const authCtx = useContext(AuthContext);
-
+  const logoutHandler = () => {
+    authCtx.logout();
+    // optional: redirect the user
+  };
   return (
     <Wrapper>
       <Content>
@@ -24,7 +27,7 @@ const Header = () => {
             </>
           )}
           {authCtx.isLoggedIn && (
-            <LinkButton onClick={authCtx.logoutHandler}>Logout</LinkButton>
+            <LinkButton onClick={logoutHandler}>Logout</LinkButton>
           )}
         </Links>
       </Content>

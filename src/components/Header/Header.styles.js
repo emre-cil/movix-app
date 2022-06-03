@@ -26,7 +26,7 @@ export const LinkButton = styled.div`
   color: var(--white);
   cursor: pointer;
   margin-left: 1rem;
-
+  user-select: none;
   &:hover {
     color: var(--gold);
   }

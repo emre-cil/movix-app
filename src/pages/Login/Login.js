@@ -30,10 +30,8 @@ const Login = () => {
         password: password.current.value.trim(),
       })
       .then((response) => {
-        console.log(response);
         if (response.data.data.jwToken) {
-          const expirationTime = new Date(new Date().getTime() + 60000 * 1000);
-          console.log(expirationTime.toISOString());
+          const expirationTime = new Date(new Date().getTime() + 6000 * 1000);
           authCtx.login(
             response.data.data.jwToken,
             expirationTime.toISOString()
