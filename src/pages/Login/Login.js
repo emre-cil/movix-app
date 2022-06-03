@@ -1,5 +1,4 @@
 import React, { useRef } from "react";
-import LogoImg from "../../images/Logo.png";
 import {
   Wrapper,
   Content,
@@ -7,7 +6,7 @@ import {
   Button,
   Input,
   Label,
-  Logo,
+  Title,
 } from "./Login.styles";
 
 const Login = () => {
@@ -17,7 +16,7 @@ const Login = () => {
   return (
     <Wrapper>
       <Content>
-        <Logo src={LogoImg} alt="Movix" />
+        <Title>Login</Title>
         <form action="submit">
           <InputWrapper>
             <Label htmlFor="email">Email</Label>
@@ -27,8 +26,12 @@ const Login = () => {
             <Label htmlFor="password">Password</Label>
             <Input type="password" ref={password} required />
           </InputWrapper>
-          <Button type="submit">Login</Button>
+          <Button type="submit">Sign In</Button>
         </form>
+        <div className="formFooter">
+          New Here?
+          <a href="/register">Create an Account</a>
+        </div>
       </Content>
     </Wrapper>
   );

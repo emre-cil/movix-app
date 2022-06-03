@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import Movie from "./components/Movie";
 import NotFound from "./components/NotFound";
 import Login from "./pages/Login/Login";
+import Register from "./pages/Register/Register";
 const App = () => (
   <BrowserRouter>
     <Header />
@@ -14,7 +15,7 @@ const App = () => (
       <Route path="/:movieId" element={<Movie />} />
       <Route path="/*" element={<NotFound />} />
       <Route path="/login" element={<Login />} />
-      <Route path="/register" element={<NotFound />} />
+      <Route path="/register" element={<Register />} />
     </Routes>
     <GlobalStyle />
   </BrowserRouter>

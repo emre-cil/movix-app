@@ -7,17 +7,36 @@ export const Wrapper = styled.div`
 `;
 
 export const Content = styled.div`
-  width: 24rem;
-  height: 29rem;
+  width: 28rem;
   background-color: var(--medGrey);
   border-radius: 0.5rem;
-  padding: 1rem;
+  padding: 1rem 3rem 2rem 3rem;
   display: flex;
   flex-direction: column;
-  align-items: center;
 
   @media screen and (max-width: 500px) {
     width: 85%;
+    padding: 0.5rem 1.5rem 2rem 1.5rem;
+  }
+  .formFooter {
+    margin-top: 1rem;
+    font-size: 0.8rem;
+    text-align: center;
+    color: var(--white);
+    a {
+      text-decoration: underline;
+      margin-left: 0.25rem;
+      color: var(--gold);
+    }
+  }
+  .nameWrapper {
+    display: flex;
+    input {
+      width: 100%;
+    }
+    div + div {
+      margin-left: 1rem;
+    }
   }
 `;
 
@@ -25,11 +44,6 @@ export const InputWrapper = styled.div`
   display: flex;
   flex-direction: column;
   margin-top: 1rem;
-  width: 18rem;
-
-  @media screen and (max-width: 500px) {
-    width: 65vw;
-  }
 `;
 
 export const Button = styled.button`
@@ -63,7 +77,7 @@ export const Input = styled.input`
   border: none;
   outline: none;
   &:focus {
-    color: var(--gold);
+    color: rgb(245, 205, 0);
   }
 `;
 
@@ -75,14 +89,13 @@ export const Label = styled.label`
   user-select: none;
 `;
 
-export const Logo = styled.img`
-  width: 18rem;
-  height: 5rem;
-  border-radius: 0.5rem;
-  margin: 2rem 0;
+export const Title = styled.h1`
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--white);
+  margin-bottom: 1.5rem;
   user-select: none;
-
   @media screen and (max-width: 500px) {
-    width: 65vw;
+    font-size: 2rem;
   }
 `;
