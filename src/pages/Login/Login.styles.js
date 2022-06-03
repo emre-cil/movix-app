@@ -3,14 +3,15 @@ import styled from "styled-components";
 export const Wrapper = styled.div`
   display: grid;
   place-items: center;
-  height: calc(100vh - 6rem);
+  padding: 1rem 0;
+  height: calc(100vh - 5.25rem);
 `;
 
 export const Content = styled.div`
-  width: 28rem;
+  width: 26rem;
   background-color: var(--medGrey);
   border-radius: 0.5rem;
-  padding: 1rem 3rem 2rem 3rem;
+  padding: 1.25rem 2.5rem 1rem 2.5rem;
   display: flex;
   flex-direction: column;
 
@@ -19,7 +20,7 @@ export const Content = styled.div`
     padding: 0.5rem 1.5rem 2rem 1.5rem;
   }
   .formFooter {
-    margin-top: 1rem;
+    margin-top: 0.75rem;
     font-size: 0.8rem;
     text-align: center;
     color: var(--white);
@@ -35,7 +36,7 @@ export const Content = styled.div`
       width: 100%;
     }
     div + div {
-      margin-left: 1rem;
+      margin-left: 1.25rem;
     }
   }
 `;
@@ -43,12 +44,12 @@ export const Content = styled.div`
 export const InputWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  margin-top: 1rem;
+  margin-top: 0.75rem;
 `;
 
 export const Button = styled.button`
   width: 100%;
-  height: 3rem;
+  height: 2.5rem;
   border-radius: 0.5rem;
   background-color: var(--darkGrey);
   color: var(--white);
@@ -67,11 +68,11 @@ export const Button = styled.button`
 `;
 
 export const Input = styled.input`
-  height: 3rem;
+  height: 2.5rem;
   border-radius: 0.5rem;
   background-color: var(--lightGrey);
   color: var(--medGrey);
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   padding-left: 0.5rem;
   font-weight: bold;
   border: none;
@@ -82,10 +83,9 @@ export const Input = styled.input`
 `;
 
 export const Label = styled.label`
-  font-size: 1.2rem;
   font-weight: bold;
   color: var(--white);
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.15rem;
   user-select: none;
 `;
 
@@ -93,7 +93,7 @@ export const Title = styled.h1`
   font-size: 2.5rem;
   font-weight: bold;
   color: var(--white);
-  margin-bottom: 1.5rem;
+  margin: 0;
   user-select: none;
   @media screen and (max-width: 500px) {
     font-size: 2rem;
