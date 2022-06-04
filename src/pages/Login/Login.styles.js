@@ -28,6 +28,7 @@ export const Content = styled.div`
       text-decoration: underline;
       margin-left: 0.25rem;
       color: var(--gold);
+      -webkit-tap-highlight-color: transparent;
     }
   }
   .nameWrapper {
@@ -50,6 +51,7 @@ export const InputWrapper = styled.div`
 export const Button = styled.button`
   width: 100%;
   height: 2.5rem;
+  -webkit-tap-highlight-color: transparent;
   border-radius: 0.5rem;
   background-color: var(--darkGrey);
   color: var(--white);
@@ -94,6 +96,7 @@ export const Title = styled.h1`
   font-weight: bold;
   color: var(--white);
   margin: 0;
+  margin-bottom: 0.5rem;
   user-select: none;
   @media screen and (max-width: 500px) {
     font-size: 2rem;

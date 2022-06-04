@@ -35,11 +35,9 @@ export const Links = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  @media screen and (max-width: 500px) {
-    flex-direction: column;
-  }
 
   a {
     text-decoration: none !important;
+    -webkit-tap-highlight-color: transparent;
   }
 `;

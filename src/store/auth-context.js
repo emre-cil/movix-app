@@ -1,8 +1,9 @@
 import React, { useState, useEffect, useCallback } from "react";
-
 let logoutTimer;
 
 const AuthContext = React.createContext({
+  email: "",
+  userName: "",
   token: "",
   isLoggedIn: false,
   login: (token) => {},
@@ -21,12 +22,13 @@ const calculateRemainingTime = (expirationTime) => {
 const retrieveStoredToken = () => {
   const storedToken = localStorage.getItem("token");
   const storedExpirationDate = localStorage.getItem("expirationTime");
-  console.log("gel");
   const remainingTime = calculateRemainingTime(storedExpirationDate);
 
   if (remainingTime <= 3600) {
     localStorage.removeItem("token");
     localStorage.removeItem("expirationTime");
+    localStorage.removeItem("userName");
+    localStorage.removeItem("email");
     return null;
   }
 
@@ -51,6 +53,8 @@ export const AuthContextProvider = (props) => {
     setToken(null);
     localStorage.removeItem("token");
     localStorage.removeItem("expirationTime");
+    localStorage.removeItem("userName");
+    localStorage.removeItem("email");
 
     if (logoutTimer) {
       clearTimeout(logoutTimer);
@@ -59,10 +63,12 @@ export const AuthContextProvider = (props) => {
     window.location.reload();
   }, []);
 
-  const loginHandler = (token, expirationTime) => {
+  const loginHandler = (token, expirationTime, userName, email) => {
     setToken(token);
     localStorage.setItem("token", token);
     localStorage.setItem("expirationTime", expirationTime);
+    localStorage.setItem("userName", userName);
+    localStorage.setItem("email", email);
 
     const remainingTime = calculateRemainingTime(expirationTime);
 
@@ -76,6 +82,8 @@ export const AuthContextProvider = (props) => {
   }, [tokenData, logoutHandler]);
 
   const contextValue = {
+    email: localStorage.getItem("email"),
+    userName: localStorage.getItem("userName"),
     token: token,
     isLoggedIn: userIsLoggedIn,
     login: loginHandler,

@@ -34,7 +34,9 @@ const Login = () => {
           const expirationTime = new Date(new Date().getTime() + 6000 * 1000);
           authCtx.login(
             response.data.data.jwToken,
-            expirationTime.toISOString()
+            expirationTime.toISOString(),
+            response.data.data.userName,
+            response.data.data.email
           );
         }
         setloading(false);

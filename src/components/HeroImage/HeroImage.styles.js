@@ -3,8 +3,8 @@ import styled from "styled-components";
 export const Wrapper = styled.div`
   background: linear-gradient(
       to bottom,
-      rgba(0, 0, 0, 0) 41%,
-      rgba(0, 0, 0, 0.65) 100%
+      rgba(0, 0, 0, 0) 50%,
+      rgba(0, 0, 0, 0.4) 100%
     ),
     url(${(props) => props.image}), var(--darkGrey);
   background-size: 100%, cover;
@@ -31,7 +31,7 @@ export const Content = styled.div`
 
 export const Text = styled.div`
   position: absolute;
-  bottom: 40px;
+  bottom: 2rem;
   margin-right: 1rem;
   max-width: 763px;
   min-height: 100px;
