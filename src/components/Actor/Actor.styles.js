@@ -17,17 +17,27 @@ export const Wrapper = styled.div`
     margin: 0 auto;
   }
 `;
+
+export const ImageContent = styled.div`
+  overflow: hidden;
+  margin: 0 auto;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+`;
 export const Image = styled.img`
   display: block;
   width: 100%;
   height: 250px;
   object-fit: cover;
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
+
+  transition: transform 0.3s ease;
   @media screen and (max-width: 768px) {
     height: 325px;
   }
   @media screen and (max-width: 455px) {
     height: 450px;
+  }
+  &:hover {
+    transform: scale(1.15);
   }
 `;
