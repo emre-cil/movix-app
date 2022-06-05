@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const Wrapper = styled.div`
   padding: 0 20px;
   border-bottom: 1px solid var(--gold);
+  -webkit-tap-highlight-color: transparent;
 `;
 
 export const Content = styled.div`
@@ -17,6 +18,8 @@ export const Content = styled.div`
 export const Logo = styled.img`
   width: 150px;
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+
   @media screen and (max-width: 500px) {
     width: 100px;
   }
@@ -38,6 +41,5 @@ export const Links = styled.div`
 
   a {
     text-decoration: none !important;
-    -webkit-tap-highlight-color: transparent;
   }
 `;

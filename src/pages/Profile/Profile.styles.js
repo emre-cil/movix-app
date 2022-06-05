@@ -1,12 +1,6 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-  background: linear-gradient(
-      to bottom,
-      rgba(0, 0, 0, 0) 50%,
-      rgba(0, 0, 0, 0.4) 100%
-    ),
-    url(${(props) => props.image}), var(--darkGrey);
   background-size: 100%, cover;
   background-position: center;
   height: calc(100vh - 5.2rem);
@@ -19,6 +13,16 @@ export const Wrapper = styled.div`
     }
     to {
       opacity: 1;
+    }
+  }
+
+  a {
+    color: var(--gold);
+    text-decoration: none;
+    margin-top: 1rem;
+    cursor: pointer;
+    &:hover {
+      color: var(--white);
     }
   }
 `;
@@ -70,14 +74,5 @@ export const Logout = styled.button`
   &:hover {
     background-color: var(--white);
     color: var(--gold);
-  }
-`;
-export const ResetPassword = styled.a`
-  color: var(--gold);
-  text-decoration: none;
-  margin-top: 1rem;
-  cursor: pointer;
-  &:hover {
-    color: var(--white);
   }
 `;

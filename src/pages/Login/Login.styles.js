@@ -5,6 +5,16 @@ export const Wrapper = styled.div`
   place-items: center;
   padding: 1rem 0;
   height: calc(100vh - 5.25rem);
+  animation: animate 0.75s;
+
+  @keyframes animate {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
 `;
 
 export const Content = styled.div`

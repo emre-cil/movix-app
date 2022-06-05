@@ -1,10 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
-import { Image } from "./Thumb.styles";
+import { Image, Wrapper } from "./Thumb.styles";
 const Thumb = ({ image, movieId, clickable }) => {
   return (
-    <div>
+    <Wrapper>
       {clickable ? (
         <Link to={`/${movieId}`}>
           <Image src={image} alt="movie" />
@@ -12,7 +12,7 @@ const Thumb = ({ image, movieId, clickable }) => {
       ) : (
         <Image clickable={clickable} src={image} alt="movie" />
       )}
-    </div>
+    </Wrapper>
   );
 };
 Thumb.propTypes = {

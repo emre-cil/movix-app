@@ -10,6 +10,7 @@ import Register from "./pages/Register/Register";
 import Profile from "./pages/Profile/Profile";
 import SavedMovies from "./pages/SavedMovies/SavedMovies";
 import FavoriteMovies from "./pages/FavoriteMovies/FavoriteMovies";
+import ResetPassword from "./pages/ResetPassword/ResetPassword";
 //store
 import AuthContext from "./store/auth-context";
 
@@ -30,12 +31,13 @@ const App = () => {
         {authCtx.isLoggedIn && (
           <>
             <Route path="/profile" element={<Profile />} />
+            <Route path="/reset-password" element={<ResetPassword />} />
             <Route path="/savedMovies" element={<SavedMovies />} />
             <Route path="/favoriteMovies" element={<FavoriteMovies />} />
           </>
         )}
         <Route path="/:movieId" element={<Movie />} />
-        <Route path="/*" element={<NotFound />} />
+        <Route path="/*" element={<Home />} />
       </Routes>
       <GlobalStyle />
     </BrowserRouter>

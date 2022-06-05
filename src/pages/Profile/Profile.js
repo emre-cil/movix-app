@@ -1,15 +1,7 @@
 import React, { useContext } from "react";
 import user from "../../images/user.png";
-import { useNavigate } from "react-router-dom";
-import {
-  Wrapper,
-  Content,
-  Image,
-  Name,
-  Email,
-  ResetPassword,
-  Logout,
-} from "./Profile.styles";
+import { useNavigate, Link } from "react-router-dom";
+import { Wrapper, Content, Image, Name, Email, Logout } from "./Profile.styles";
 import AuthContext from "../../store/auth-context";
 
 const Profile = () => {
@@ -27,7 +19,7 @@ const Profile = () => {
           <>
             <Name>{authCtx.userName}</Name>
             <Email>{authCtx.email}</Email>
-            <ResetPassword>reset-password</ResetPassword>
+            <Link to="/reset-password">reset-password</Link>
             <Logout onClick={logoutHandler}>Logout</Logout>
           </>
         )}

@@ -38,7 +38,7 @@ const Home = () => {
       <Grid header={searchValue ? "Search Result" : "Populer Movies"}>
         {state.results.map((movie) => (
           <Thumb
-            key={movie.id}
+            key={movie.id + Math.random()}
             clickable
             image={
               movie.poster_path
