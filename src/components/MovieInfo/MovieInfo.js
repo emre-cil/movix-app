@@ -1,13 +1,17 @@
-import React from "react";
+import React, { useContext } from "react";
 import PropTypes from "prop-types";
+import { useNavigate } from "react-router-dom";
 
 import { BsHeart, BsBookmarkPlus } from "react-icons/bs";
 import Thumb from "../Thumb/Thumb";
 import { IMAGE_BASE_URL, POSTER_SIZE } from "../../config";
 import NoImage from "../../images/noImage.png";
 import { Wrapper, Content, Text, HeaderWrapper } from "./MovieInfo.styles";
+import AuthContext from "../../store/auth-context";
 
 const MovieInfo = ({ movie }) => {
+  let navigate = useNavigate();
+  const authCtx = useContext(AuthContext);
   return (
     <Wrapper backdrop={movie.backdrop_path}>
       <Content>
@@ -23,8 +27,16 @@ const MovieInfo = ({ movie }) => {
           <HeaderWrapper>
             <h1>{movie.title}</h1>
             <div>
-              <BsHeart />
-              <button>
+              <BsHeart
+                onClick={() => {
+                  !authCtx.isLoggedIn && navigate("/login", { replace: true });
+                }}
+              />
+              <button
+                onClick={() => {
+                  !authCtx.isLoggedIn && navigate("/login", { replace: true });
+                }}
+              >
                 Watch Later <BsBookmarkPlus />
               </button>
             </div>
