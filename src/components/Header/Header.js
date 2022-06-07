@@ -26,7 +26,7 @@ const Header = () => {
           {authCtx.isLoggedIn && (
             <>
               <Link to="/favorite-movies">
-                <LinkButton>Favosrites</LinkButton>
+                <LinkButton>Favorites</LinkButton>
               </Link>
               <Link to="/watchlist">
                 <LinkButton>Watchlist</LinkButton>
