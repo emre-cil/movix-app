@@ -1,8 +1,7 @@
 import React from "react";
 import Grid from "../../components/Grid/Grid";
 import Thumb from "../../components/Thumb/Thumb";
-
-const FavoriteMovies = () => {
+const Watchlist = () => {
   const movieList = [
     {
       id: 1,
@@ -82,12 +81,12 @@ const FavoriteMovies = () => {
   ];
 
   return (
-    <Grid header="Favorite Movies">
+    <Grid header="Watch Later">
       {movieList.map((movie) => (
         <Thumb
           key={movie.id}
           clickable
-          favorite
+          favorite={false}
           image={
             // movie.poster_path
             //   ? IMAGE_BASE_URL + POSTER_SIZE + movie.poster_path
@@ -100,5 +99,4 @@ const FavoriteMovies = () => {
     </Grid>
   );
 };
-
-export default FavoriteMovies;
+export default Watchlist;

@@ -1,8 +1,21 @@
 import styled from "styled-components";
 export const Wrapper = styled.div`
   overflow: hidden;
+  width: 100%;
+  height: 100%;
   margin: 0 auto;
   border-radius: 1rem;
+  position: relative;
+  svg {
+    font-size: 1.75rem;
+    color: #fff;
+    z-index: 99;
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+  }
 `;
 
 export const Image = styled.img`

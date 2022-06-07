@@ -56,8 +56,44 @@ export const Text = styled.div`
     }
   }
   h1 {
+    font-size: 2.2rem;
     @media screen and (max-width: 768px) {
-      font-size: var(--fontBig);
+      font-size: 1.5rem;
     }
+  }
+`;
+export const HeaderWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 0 20px 0;
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+  }
+  svg {
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  button {
+    background: var(--gold);
+    font-weight: 800;
+    padding: 0.5rem 0.75rem;
+    display: flex;
+    align-items: center;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    margin-left: 1rem;
+    font-size: 1.1rem;
+    cursor: pointer;
+
+    svg {
+      margin-left: 4px;
+      font-size: 1.5rem;
+    }
+  }
+  div {
+    display: flex;
+    align-items: center;
   }
 `;

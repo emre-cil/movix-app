@@ -3,11 +3,14 @@ import PropTypes from "prop-types";
 import { calcTime, convertMoney } from "../../helpers";
 import { Wrapper, Content } from "./MovieInfoBar.styles";
 
-const MovieInfoBar = ({ time, budget, revenue }) => (
+const MovieInfoBar = ({ releaseDate, time, budget, revenue }) => (
   <Wrapper>
     <Content>
       <div className="column">
         <p>Running time: {calcTime(time)}</p>
+      </div>
+      <div className="column">
+        <p>Release: {releaseDate}</p>
       </div>
       <div className="column">
         <p>Budget: {convertMoney(budget)}</p>

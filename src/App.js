@@ -8,7 +8,7 @@ import NotFound from "./components/NotFound";
 import Login from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
 import Profile from "./pages/Profile/Profile";
-import SavedMovies from "./pages/SavedMovies/SavedMovies";
+import Watchlist from "./pages/Watchlist/Watchlist";
 import FavoriteMovies from "./pages/FavoriteMovies/FavoriteMovies";
 import ResetPassword from "./pages/ResetPassword/ResetPassword";
 //store
@@ -32,8 +32,8 @@ const App = () => {
           <>
             <Route path="/profile" element={<Profile />} />
             <Route path="/reset-password" element={<ResetPassword />} />
-            <Route path="/savedMovies" element={<SavedMovies />} />
-            <Route path="/favoriteMovies" element={<FavoriteMovies />} />
+            <Route path="/watchlist" element={<Watchlist />} />
+            <Route path="/favorite-movies" element={<FavoriteMovies />} />
           </>
         )}
         <Route path="/:movieId" element={<Movie />} />

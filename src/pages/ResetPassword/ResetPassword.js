@@ -23,7 +23,6 @@ const ResetPassword = () => {
 
   const onSubmitHandler = (e) => {
     e.preventDefault();
-    console.log("submit");
   };
   return (
     <>

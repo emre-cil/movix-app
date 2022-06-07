@@ -1,9 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
+
+import { BsHeart, BsBookmarkPlus } from "react-icons/bs";
 import Thumb from "../Thumb/Thumb";
 import { IMAGE_BASE_URL, POSTER_SIZE } from "../../config";
 import NoImage from "../../images/noImage.png";
-import { Wrapper, Content, Text } from "./MovieInfo.styles";
+import { Wrapper, Content, Text, HeaderWrapper } from "./MovieInfo.styles";
 
 const MovieInfo = ({ movie }) => {
   return (
@@ -18,7 +20,15 @@ const MovieInfo = ({ movie }) => {
           clickable={false}
         />
         <Text>
-          <h1>{movie.title}</h1>
+          <HeaderWrapper>
+            <h1>{movie.title}</h1>
+            <div>
+              <BsHeart />
+              <button>
+                Watch Later <BsBookmarkPlus />
+              </button>
+            </div>
+          </HeaderWrapper>
           <h3>PLOT</h3>
           <p>{movie.overview}</p>
 
