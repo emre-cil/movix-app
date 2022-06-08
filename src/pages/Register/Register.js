@@ -81,10 +81,12 @@ const Register = () => {
       })
       .then((response) => {
         if (response.status === 200) {
-          //email confirmation
-          axios.get(response.data.message).catch((error) => {
-            toast.error(error.response.data.message);
-          });
+          axios
+            .get(response.data.message)
+            .then((response) => {})
+            .catch((error) => {
+              toast.error(error.response.data.message);
+            });
 
           setloading(false);
           navigate("/login", { replace: true });

@@ -1,8 +1,7 @@
-import React, { useContext } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import { useNavigate } from "react-router-dom";
-
-import { BsHeart, BsBookmarkPlus } from "react-icons/bs";
+import { BsBookmarkPlus, BsBookmarkCheck } from "react-icons/bs";
 import Thumb from "../Thumb/Thumb";
 import { IMAGE_BASE_URL, POSTER_SIZE } from "../../config";
 import NoImage from "../../images/noImage.png";
@@ -12,6 +11,40 @@ import AuthContext from "../../store/auth-context";
 const MovieInfo = ({ movie }) => {
   let navigate = useNavigate();
   const authCtx = useContext(AuthContext);
+  const [isWatchLater, setIsWatchLater] = useState(false);
+  const addWatchLaterOnClickHandler = () => {
+    const WLs = localStorage.getItem("watchLater");
+    const movieId = movie.id;
+    const image = `${IMAGE_BASE_URL}${POSTER_SIZE}${movie.poster_path}`;
+    if (WLs) {
+      const WLsArray = JSON.parse(WLs);
+      WLsArray.push({ movieId, image });
+      localStorage.setItem("watchLater", JSON.stringify(WLsArray));
+    } else {
+      localStorage.setItem("watchLater", JSON.stringify([{ movieId, image }]));
+    }
+    setIsWatchLater(true);
+  };
+
+  const deleteWatchLaterOnClickHandler = () => {
+    const WLs = localStorage.getItem("watchLater");
+    if (WLs) {
+      const WLsArray = JSON.parse(WLs);
+      const newWLsArray = WLsArray.filter((wl) => wl.movieId !== movie.id);
+      localStorage.setItem("watchLater", JSON.stringify(newWLsArray));
+    }
+    setIsWatchLater(false);
+  };
+
+  useEffect(() => {
+    const WLs = localStorage.getItem("watchLater");
+    if (WLs) {
+      const WLsArray = JSON.parse(WLs);
+      const isWatchLater = WLsArray.some((wl) => wl.movieId === movie.id);
+      setIsWatchLater(isWatchLater);
+    }
+  }, []);
+
   return (
     <Wrapper backdrop={movie.backdrop_path}>
       <Content>
@@ -26,20 +59,18 @@ const MovieInfo = ({ movie }) => {
         <Text>
           <HeaderWrapper>
             <h1>{movie.title}</h1>
-            <div>
-              <BsHeart
-                onClick={() => {
-                  !authCtx.isLoggedIn && navigate("/login", { replace: true });
-                }}
-              />
+            {authCtx.isLoggedIn && (
               <button
-                onClick={() => {
-                  !authCtx.isLoggedIn && navigate("/login", { replace: true });
-                }}
+                onClick={
+                  isWatchLater
+                    ? deleteWatchLaterOnClickHandler
+                    : addWatchLaterOnClickHandler
+                }
               >
-                Watch Later <BsBookmarkPlus />
+                Watch Later
+                {isWatchLater ? <BsBookmarkCheck /> : <BsBookmarkPlus />}
               </button>
-            </div>
+            )}
           </HeaderWrapper>
           <h3>PLOT</h3>
           <p>{movie.overview}</p>

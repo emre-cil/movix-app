@@ -7,7 +7,7 @@ export const Wrapper = styled.div`
   border-radius: 1rem;
   position: relative;
   svg {
-    font-size: 1.75rem;
+    font-size: 1.65rem;
     color: #fff;
     z-index: 99;
     position: absolute;
