@@ -66,6 +66,7 @@ const MovieInfo = ({ movie }) => {
                     ? deleteWatchLaterOnClickHandler
                     : addWatchLaterOnClickHandler
                 }
+                style={isWatchLater ? { backgroundColor: "lightgrey" } : {}}
               >
                 Watch Later
                 {isWatchLater ? <BsBookmarkCheck /> : <BsBookmarkPlus />}
