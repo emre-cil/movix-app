@@ -15,6 +15,7 @@ const Movie = () => {
   const { state: movie, loading, error } = useMovieFetch(movieId);
   if (loading) return <Spinner />;
   if (error) return <div>Error...</div>;
+  console.log(movie);
   return (
     <>
       <MovieInfo movie={movie} />
@@ -25,20 +26,20 @@ const Movie = () => {
         revenue={movie.revenue}
       />
 
-      <Trailer />
+      <Trailer filmId={movie.id} />
       <Grid header="Actors">
-        {movie.actors.map((actor) => (
-          <Actor
-            key={actor.credit_id}
-            name={actor.name}
-            character={actor.character}
-            imageUrl={
-              actor.profile_path
-                ? `${IMAGE_BASE_URL}${POSTER_SIZE}${actor.profile_path}`
-                : NoImage
-            }
-          />
-        ))}
+        {movie.actors.map((actor) => {
+          return (
+            actor.profile_path && (
+              <Actor
+                key={actor.credit_id}
+                name={actor.name}
+                character={actor.character}
+                imageUrl={`${IMAGE_BASE_URL}${POSTER_SIZE}${actor.profile_path}`}
+              />
+            )
+          );
+        })}
       </Grid>
     </>
   );
