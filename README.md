@@ -12,6 +12,9 @@ REACT_APP_API_KEY=
 
 # Images
 
+<img src="https://github.com/emre-cil/MoviX/blob/master/movixScreen.png" alt="alt text" />
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
