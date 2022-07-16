@@ -3,10 +3,10 @@ export const Wrapper = styled.div`
   overflow: hidden;
   margin: 0 auto;
   position: relative;
-  border-radius: ${(props) => (props.clickable ? '20px' : '20px 0 0 20px')};
+  border-radius: ${(props) => (props.clickable ? '16px' : '20px 0 0 20px')};
   @media screen and (max-width: 768px) {
     border-top-right-radius: 20px;
-    border-bottom-left-radius: ${(props) => (props.clickable ? '20px' : '0')};
+    border-bottom-left-radius: ${(props) => (props.clickable ? '16px' : '0')};
   }
   svg {
     font-size: 1.65rem;
