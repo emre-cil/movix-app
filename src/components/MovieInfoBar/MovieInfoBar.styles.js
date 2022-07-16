@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Wrapper = styled.div`
   display: flex;
@@ -12,15 +12,17 @@ export const Content = styled.div`
   width: 100%;
   max-width: var(--maxWidth);
   margin: 0 auto;
-
   .column {
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: var(--medGrey);
-    border-radius: 20px;
+    border-radius: 1rem;
     margin: 0 20px;
     flex: 1;
+    p {
+      color: var(--gold);
+    }
     :first-child {
       margin-left: 0;
     }

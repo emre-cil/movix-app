@@ -1,14 +1,13 @@
-import React, { useState, useEffect } from "react";
-import { useHomeFetch } from "../../hooks/useHomeFetch";
-import { POSTER_SIZE, BACKDROP_SIZE, IMAGE_BASE_URL } from "../../config";
-import NoImage from "../../images/noImage.png";
+import React from 'react';
+import { useHomeFetch } from '../../hooks/useHomeFetch';
+import { POSTER_SIZE, BACKDROP_SIZE, IMAGE_BASE_URL } from '../../config';
 //components
-import HeroImage from "../../components/HeroImage/HeroImage";
-import Grid from "../../components/Grid/Grid";
-import Thumb from "../../components/Thumb/Thumb";
-import Spinner from "../../components/Spinner/Spinner";
-import SearchBar from "../../components/SearchBar/SearchBar";
-import Button from "../../components/Button/Button";
+import HeroImage from '../../components/HeroImage/HeroImage';
+import Grid from '../../components/Grid/Grid';
+import Thumb from '../../components/Thumb/Thumb';
+import Spinner from '../../components/Spinner/Spinner';
+import SearchBar from '../../components/SearchBar/SearchBar';
+import Button from '../../components/Button/Button';
 
 const Home = () => {
   const {
@@ -35,16 +34,13 @@ const Home = () => {
       <SearchBar setSearchValue={setSearchValue} />
 
       {/* popular Movies */}
-      <Grid header={searchValue ? "Search Result" : "Populer Movies"}>
+      <Grid header={searchValue ? 'Search Result' : 'Populer Movies'}>
         {state.results.map((movie) => (
           <Thumb
             key={movie.id + Math.random()}
             clickable
-            image={
-              movie.poster_path
-                ? IMAGE_BASE_URL + POSTER_SIZE + movie.poster_path
-                : NoImage
-            }
+            image={IMAGE_BASE_URL + POSTER_SIZE + movie.poster_path}
+            movieName={movie.original_title}
             movieId={movie.id}
           />
         ))}

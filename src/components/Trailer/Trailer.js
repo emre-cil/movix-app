@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
-import { Wrapper, IFrame } from "./Trailer.styles";
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import { Wrapper, IFrame } from './Trailer.styles';
 const Trailer = ({ filmId }) => {
-  const [trailerURl, setTrailerURl] = useState("");
+  const [trailerURl, setTrailerURl] = useState('');
   useEffect(() => {
     const videosUrl = `https://api.themoviedb.org/3/movie/${filmId}/videos?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&page=1`;
     const trailerInfo = async () => {
@@ -11,12 +11,12 @@ const Trailer = ({ filmId }) => {
     };
 
     trailerInfo();
-  }, []);
+  }, [filmId]);
 
   return (
     <Wrapper>
       <IFrame
-        src={"https://www.youtube.com/embed/" + trailerURl}
+        src={'https://www.youtube.com/embed/' + trailerURl}
         frameBorder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowFullScreen

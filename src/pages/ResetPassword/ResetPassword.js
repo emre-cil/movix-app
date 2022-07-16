@@ -1,8 +1,7 @@
-import React, { useRef, useState, useContext } from "react";
-import { ToastContainer, toast } from "react-toastify";
-import { useNavigate } from "react-router-dom";
-import Spinner from "../../components/Spinner/Spinner";
-import AuthContext from "../../store/auth-context";
+import React, { useRef, useState } from 'react';
+import { ToastContainer } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
+import Spinner from '../../components/Spinner/Spinner';
 
 import {
   Wrapper,
@@ -12,17 +11,17 @@ import {
   Input,
   Label,
   Title,
-} from "../Login/Login.styles";
+} from '../Login/Login.styles';
 const ResetPassword = () => {
   let navigate = useNavigate();
-  const authCtx = useContext(AuthContext);
   const [loading, setloading] = useState(false);
-  const password = useRef("");
-  const passwordConfirm = useRef("");
-  const axios = require("axios").default;
+  const password = useRef('');
+  const passwordConfirm = useRef('');
 
   const onSubmitHandler = (e) => {
     e.preventDefault();
+    setloading(true);
+    navigate('/');
   };
   return (
     <>

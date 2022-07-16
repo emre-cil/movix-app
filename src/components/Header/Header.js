@@ -1,8 +1,8 @@
-import React, { useState, useContext } from "react";
-import { Link } from "react-router-dom";
-import { Wrapper, Content, Logo, LinkButton, Links } from "./Header.styles";
-import LogoImg from "../../images/Logo.png";
-import AuthContext from "../../store/auth-context";
+import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
+import { Wrapper, Content, Logo, LinkButton, Links } from './Header.styles';
+import LogoImg from '../../images/Logo.png';
+import AuthContext from '../../store/auth-context';
 const Header = () => {
   const authCtx = useContext(AuthContext);
 
